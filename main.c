@@ -1,13 +1,11 @@
 #include <stdio.h>
 
-int main()
-{
-  int torre = 0;
-  int bispo = 0;
-  int rainha = 0;
-  printf("============TORRE===============\n");
-  // TORRE
-  while (torre < 5) {#include <stdio.h>
+void moverTorre(int casas) {
+  if (casas > 0) {
+    moverTorre(casas - 1);
+    printf("%d - Mover Torre para Esquerda\n", casas);
+  } 
+}
 
 int main()
 {
@@ -43,25 +41,7 @@ int main()
     }
     printf("Direita\n");
   }
-  return 0;
-}
 
-    torre++;
-    printf("%d - Direita\n", torre);
-  }
-  
-  printf("===========BISPO================\n");
-  // BISPO
-  for (int i = 0; i < 5; i++) {
-    bispo++;
-    printf("%d - Diagonal esquerda\n", bispo);
-  }
-  
-  printf("===========RAINHA================\n");
-  do
-  {
-    rainha++;
-    printf("%d - Diagonal direita\n", rainha);
-  } while (rainha < 8);
+  moverTorre(5);
   return 0;
 }
